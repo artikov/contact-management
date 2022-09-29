@@ -1,9 +1,10 @@
 
 :root{
     --dark: #2b2d42;
-    --light: #abd5bd;
+    --light: #39393b;
     --border: #dee2e6;
     --border-btn: #edf2f4;
+    --main: #59a5f1;
 }
 
 * {
@@ -64,7 +65,7 @@ a {
 }
 
 #header nav {
-    background-color: #06d6a0;
+    background-color: var(--main);
     padding: 1em 0;
     width: 100%;
 }
@@ -101,7 +102,7 @@ table {
 }
 
 .table tr:hover {
-    background-color: #06d6a0;
+    background-color: var(--main);
 }
 
 .table tr:hover td > a {
@@ -171,7 +172,7 @@ table {
 #add_number .form-group .btn{
     width: 100%;
     padding:.9em 1em;
-    background-color: #16db93;
+    background-color: var(--main);
     border: none;
     font-size: 1em;
     cursor: pointer;
