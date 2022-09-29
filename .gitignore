@@ -1,6 +1,7 @@
 # custom 
 .DS_store
-*.env
+/*.env
+npm-debug.log
 
 # react default
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
