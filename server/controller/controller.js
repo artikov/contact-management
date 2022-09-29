@@ -12,7 +12,6 @@ export const create = (req, res) => {
 
     // new instance of phoneDB
     const phone = new Phonedb({
-        // ID: uuidv4(),
         number: req.body.number,
         monthly_price: req.body.monthly,
         setup_price: req.body.setup,
@@ -23,7 +22,8 @@ export const create = (req, res) => {
     phone
         .save(phone)
         .then(data=>{
-            res.send(data)
+            // res.send(data)
+            res.redirect('/add_number')
         })
         .catch(err=>{
             res.status(500).send({
@@ -35,13 +35,30 @@ export const create = (req, res) => {
 
 // FIND PHONE
 export const find = (req, res) => {
-    Phonedb.find()
-        .then(phone=>{
-            res.send(phone)
-        })
-        .catch(err =>{
-            res.status(500).send({message:err.message || "Error occured while finding the phone"})
-        })
+
+    if(req.query.id){
+        const id = req.query.id
+
+        Phonedb.findById(id)
+            .then(data=> {
+                if(!data){
+                    res.status(404).send({message:"Not found phone"})
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err=>{
+                res.status(500).send({message:"Error finding the phone data"})
+            })
+    }else{
+        Phonedb.find()
+            .then(phone=>{
+                res.send(phone)
+            })
+            .catch(err =>{
+                res.status(500).send({message:err.message || "Error occured while finding the phone"})
+            })
+    }
 }
 
 // UPDATE PHONE

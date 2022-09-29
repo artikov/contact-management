@@ -17,20 +17,20 @@
             <div class="new_number">
                 <div class="form-group">
                     <label for="number" class="text-light">Number: </label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text" name="number" value="" placeholder="Phone number">
+                    <input type="hidden" name="id" value="<%= phone._id%>">
+                    <input type="text" name="number" value="<%= phone.number%>" placeholder="Phone number">
                 </div>
                 <div class="form-group">
                     <label for="monthly" class="text-light">Monthly: </label>
-                    <input type="text" name="monthly" value="" placeholder="Monthly price">
+                    <input type="text" name="monthly" value="<%= phone.monthly_price%>" placeholder="Monthly price">
                 </div>
                 <div class="form-group">
                     <label for="setup" class="text-light">Setup: </label>
-                    <input type="text" name="setup" value="" placeholder="Setup price">
+                    <input type="text" name="setup" value="<%= phone.setup_price%>" placeholder="Setup price">
                 </div>
                 <div class="form-group">
                     <label for="currency" class="text-light">Currency: </label>
-                    <input type="text" name="currency" value="" placeholder="Currency">
+                    <input type="text" name="currency" value="<%= phone.currency%>" placeholder="Currency">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn text-dark update">Submit</button>

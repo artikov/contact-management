@@ -1,15 +1,19 @@
+
+<% for(var i = 0; i<phones.length; i++) { %>
 <tr>
-    <td>42</td>
-    <td>+55 84 91234-4321</td>
-    <td>0.03</td>
-    <td>3.40</td>
-    <td>U$</td>
+    <td><%= i + 1 %></td>
+    <td><%= phones[i].number %></td>
+    <td><%= phones[i].monthly_price %></td>
+    <td><%= phones[i].setup_price %></td>
+    <td><%= phones[i].currency %></td>
     <td>
-        <a href="update_number" class="btn border-shadow update">
+        <a href="/update_number?id=<%= phones[i]._id %>" class="btn border-shadow update">
             <span class="text-gradient"><i class="fa-regular fa-pen-to-square"></i></span>
         </a>
-        <a href="#" class="btn border-shadow delete">
+        <a class="btn border-shadow delete" data-id=<%= phones[i]._id %>>
             <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
         </a>
     </td>
 </tr>
+
+<% } %>

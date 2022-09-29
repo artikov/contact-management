@@ -33,9 +33,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.set("view engine", "ejs")
 
 // asset loading
-app.use('/css', express.static(path.resolve(__dirname, 'assets/css')))
-app.use('/img', express.static(path.resolve(__dirname, 'assets/img')))
-app.use('/js', express.static(path.resolve(__dirname, 'assets/js')))
+app.use('/css', express.static(path.resolve(__dirname, './assets/css')))
+app.use('/img', express.static(path.resolve(__dirname, './assets/img')))
+app.use('/js', express.static(path.resolve(__dirname, './assets/js')))
 
 // load routers
 app.use('/', route)
