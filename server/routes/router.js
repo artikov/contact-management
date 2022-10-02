@@ -4,7 +4,6 @@ import { create, deletePhone, update, find } from '../controller/controller.js'
 
 const router = express.Router()
 
-
 // Routers 
 router.get('/', getAll)
 router.get('/add_number', addNumber)

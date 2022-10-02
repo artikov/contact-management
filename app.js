@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import path from 'path'
 import {fileURLToPath} from 'url';
+import cors from 'cors'
 
 import connectDB from './server/database/connection.js'
 
@@ -22,6 +23,9 @@ const PORT = process.env.PORT || 5000
 
 // log requests (morgan module allows log requests on the console whenever we make requests)
 app.use(morgan('tiny'))
+
+// enable all CORS requests
+app.use(cors())
 
 // MONGODB connection
 connectDB()
