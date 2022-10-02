@@ -25,7 +25,7 @@ export const addNumber = (req, res) => {
 export const updateNumber = (req, res) => {
 
     // MAKE REQUEST
-    axios.get(url, {params: {id: req.query.id}})
+    axios.get(`${url}/`, {params: {id: req.query.id}})
         .then((phonedata) => {
             res.render('update_number', {phone: phonedata.data})
         })
