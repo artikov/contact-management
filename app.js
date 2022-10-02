@@ -25,13 +25,13 @@ const PORT = process.env.PORT || 5000
 app.use(morgan('tiny'))
 
 // enable all CORS requests
-app.use(cors())
 
 // MONGODB connection
 connectDB()
 
 // parse requests to body-parser
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors())
 
 // setting view engine
 app.set("view engine", "ejs")

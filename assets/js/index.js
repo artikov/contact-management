@@ -1,3 +1,6 @@
+const url = 'https://contact-management-artikov.herokuapp.com/api/numbers'
+
+
 $("#add_number").submit(function(event) {
     alert("Data added successfully!")
 })
@@ -13,7 +16,7 @@ $("#update_number").submit(function(event) {
     })
 
     let request = {
-        "url": `http://localhost:8080/api/numbers/${data.id}`,
+        "url": `${url}/${data.id}`,
         "method": "PUT",
         "data": data
     }
@@ -31,7 +34,7 @@ if (window.location.pathname=='/'){
         let id = $(this).attr("data-id")
 
         let request = {
-            "url": `http://localhost:8080/api/numbers/${id}`,
+            "url": `${url}/${id}`,
             "method": "DELETE",
         }
 
