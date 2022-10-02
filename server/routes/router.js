@@ -7,9 +7,7 @@ const router = express.Router()
 
 // Routers 
 router.get('/', getAll)
-
 router.get('/add_number', addNumber)
-
 router.get('/update_number', updateNumber)
 
 // API 

@@ -6,7 +6,7 @@ import { response } from "express"
 export const getAll = (req, res) => {
 
     // MAKE A GET REQUEST TO /api/numbers
-    axios.get('http://localhost:8080/api/numbers')
+    axios.get('https://contact-management-artikov.herokuapp.com/')
         .then((response) => {
             res.render('index', {phones: response.data})
         })

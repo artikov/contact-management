@@ -7,7 +7,7 @@ import {fileURLToPath} from 'url';
 
 import connectDB from './server/database/connection.js'
 
-import route from './server/routes/router.js'
+import routes from './server/routes/router.js'
 
 
 // setting up the path
@@ -38,6 +38,6 @@ app.use('/img', express.static(path.resolve(__dirname, './assets/img')))
 app.use('/js', express.static(path.resolve(__dirname, './assets/js')))
 
 // load routers
-app.use('/', route)
+app.use('/', routes)
 
 app.listen(PORT, () => console.log(`server is running on http://localhost:${PORT}`))
